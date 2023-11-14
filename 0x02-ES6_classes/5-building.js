@@ -1,8 +1,8 @@
 // Implement a class named Building.
 export default class Building {
   /**
-   * @param {number} sqft - size of building
-   * Implement a getter and setter for sqft
+   * @param {number} sqft.
+   * sqft (Number)
    */
   constructor(sqft) {
     this.sqft = sqft;
@@ -15,3 +15,11 @@ export default class Building {
     }
   }
 
+  get sqft() {
+    return this._sqft;
+  }
+
+  set sqft(value) {
+    this._sqft = value;
+  }
+}
