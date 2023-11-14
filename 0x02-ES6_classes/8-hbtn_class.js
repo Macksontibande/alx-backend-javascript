@@ -1,31 +1,37 @@
 // Implement a class named HolbertonClass.
-export default class Airport {
+export default class HolbertonClass {
   /**
-   * size (Number)
-   * location (String)
+   * @param {number} size - no of students in class
+   * @param {string} location - location of class
    */
-  constructor(name, code) {
-    this.name = name;
-    this.code = code;
+  constructor(size, location) {
+    this.size = size;
+    this.location = location;
   }
 
-  get name() {
-    return this._name;
+  get size() {
+    return this._size;
   }
 
-  set name(value) {
-    this._name = value;
+  set size(value) {
+    this._size = value;
   }
 
-  get code() {
-    return this._code;
+  get location() {
+    return this._location;
   }
 
-  set code(value) {
-    this._code = value;
+  set location(value) {
+    this._location = value;
   }
 
-  get [Symbol.toStringTag]() {
-    return this._code;
+  [Symbol.toPrimitive](hint) {
+    if (hint === 'number') {
+      return this.size;
+    }
+    if (hint === 'string') {
+      return this.location;
+    }
+    return this;
   }
 }
